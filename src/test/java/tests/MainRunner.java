@@ -2,108 +2,127 @@ package tests;
 
 import org.testng.annotations.Test;
 
+@SuppressWarnings("javadoc")
 public class MainRunner extends BaseTest {
-	
+
 	String siteURL = "https://maps.b144.co.il/";
-	
-	@Test (priority = 1 ,groups= "OpenWebSite-test", description= "Open the web site test")
+
+	@Test(priority = 1, groups = "OpenWebSite-test", description = "Open the web site test")
 	public void upFooterOpenWebSite() {
-		MapsPage.getWebSite(siteURL);
-	}
-	
-	@Test (priority = 2 ,groups= "UpFooter-test" , description= "Test if Hamburger menu have the X option")
-	public void upFooterXButton() {
-		MapsPage.changeHamburgerMenuUponOpeningToX();
-	}
-	
-	@Test (priority = 3 ,groups= "UpFooter-test" , description= "Test that the Hamburger menu can be closed")
-	public void upFooterHamburgerButton() {
-		MapsPage.changeHamburgerMenuBackToHamburgerMenu();
-	}
-	
-	@Test (priority = 4 ,groups= "UpFooter-test" , description= "Test that the user land at the main 144 page")
-	public void upFooterClickOnB144Link() {
-		MapsPage.clickOnB144Link();
-	}
-	
-	@Test (priority = 5 ,groups= "UpFooter-test" , description= "Test that the text at Drop down menu is correct")
-	public void compareTextAtDropDownMenu() {
-		MainPage.compareOptionsOnDropDownMenu();
-	}
-	
-	@Test (priority = 6 ,groups= "UpFooter-test" , description= "Test that the text color at Drop down menu is correct")
-	public void compareTextColorAtDropDownMenu() {
-		MainPage.testColorOfButtons();
+		mapsPage.getWebSite(siteURL);
 	}
 
-	@Test (priority = 7 ,groups= "UpFooter-test" , description= "Test login proccess of private and business user")
+	@Test(priority = 2, groups = "UpFooter-test",
+			description = "Test if Hamburger menu have the X option")
+	public void upFooterXButton() {
+		mapsPage.changeHamburgerMenuUponOpeningToX();
+	}
+
+	@Test(priority = 3, groups = "UpFooter-test",
+			description = "Test that the Hamburger menu can be closed")
+	public void upFooterHamburgerButton() {
+		mapsPage.changeHamburgerMenuBackToHamburgerMenu();
+	}
+
+	@Test(priority = 4, groups = "UpFooter-test",
+			description = "Test that the user land at the main 144 page")
+	public void upFooterClickOnB144Link() {
+		mapsPage.clickOnB144Link();
+	}
+
+	@Test(priority = 5, groups = "UpFooter-test",
+			description = "Test that the text at Drop down menu is correct")
+	public void compareTextAtDropDownMenu() {
+		mainPage.compareOptionsOnDropDownMenu();
+	}
+
+	@Test(priority = 6, groups = "UpFooter-test",
+			description = "Test that the text color at Drop down menu is correct")
+	public void compareTextColorAtDropDownMenu() {
+		mainPage.testColorOfButtons();
+	}
+
+	@Test(priority = 7, groups = "UpFooter-test",
+			description = "Test login proccess of private and business user")
 	public void testLoginPagesforPrivateAndBusiness() {
-		MainPage.testLoginPages();
+		mainPage.testLoginPages();
 	}
-	
-	@Test (priority = 8 ,groups= "UpFooter-test" , description= "Test the accessability menu")
+
+	@Test(priority = 8, groups = "UpFooter-test", description = "Test the accessability menu")
 	public void testAccessabilityMenu() {
-		MainPage.testAccessabilityMenu();
+		mainPage.testAccessabilityMenu();
 	}
-	
-	@Test (priority = 9 ,groups = "Business at the area - business tab" , description= "Test that business tab is default choosen")
+
+	@Test(priority = 9, groups = "Business at the area - business tab",
+			description = "Test that business tab is default choosen")
 	public void testBusinssTabIsDefaultSelected() {
-		MapsPage.businessTabIsDefaultChoose();
+		mapsPage.businessTabIsDefaultChoose();
 	}
-	
-	@Test (priority = 10 ,groups = "Business at the area - business tab" , description= "Test that each card have an eye icon on it")
+
+	@Test(priority = 10, groups = "Business at the area - business tab",
+			description = "Test that each card have an eye icon on it")
 	public void testBusinssTabIcon() {
-		MapsPage.testTheIconAtBusinessTab();
+		mapsPage.testTheIconAtBusinessTab();
 	}
-	
-	@Test (priority = 11 ,groups = "Business at the area - business tab" , description= "Test that the text at the card is white")
+
+	@Test(priority = 11, groups = "Business at the area - business tab",
+			description = "Test that the text at the card is white")
 	public void testBusinssTabTextColor() {
-		MapsPage.testTextColorAtBusinessAtTheArea();
+		mapsPage.testTextColorAtBusinessAtTheArea();
 	}
-	
-	@Test (priority = 12 ,groups = "Business at the area - business tab" , description= "Test that unselected tab is white colored")
+
+	@Test(priority = 12, groups = "Business at the area - business tab",
+			description = "Test that unselected tab is white colored")
 	public void testBusinssTabColorWhenUnselected() {
-		MapsPage.testColorOfUnselectedTab();
+		mapsPage.testColorOfUnselectedTab();
 	}
-	
-	@Test (priority = 13 ,groups = "Business at the area - business tab" , description= "Test that the header at the page is the same as the card")
+
+	@Test(priority = 13, groups = "Business at the area - business tab",
+			description = "Test that the header at the page is the same as the card")
 	public void testMapsHeaderTextTopRight() {
-		MapsPage.testMapsHeaderTextTopRight();
+		mapsPage.testMapsHeaderTextTopRight();
 	}
-	
-	@Test (priority = 14 ,groups = "Business at the area - business card" , description= "Test the number of cards at the page")
+
+	@Test(priority = 14, groups = "Business at the area - business card",
+			description = "Test the number of cards at the page")
 	public void countCardsAtMapPage() {
-		MapsPage.testCardsAreNumberd();
+		mapsPage.testCardsAreNumberd();
 	}
-	
-	@Test (priority = 15 ,groups = "Business at the area - business card" , description= "Test that cards have number")
+
+	@Test(priority = 15, groups = "Business at the area - business card",
+			description = "Test that cards have number")
 	public void testThatCardsHaveNumbers() {
-		MapsPage.testThatCardsHaveNumbers();
+		mapsPage.testThatCardsHaveNumbers();
 	}
-	
-	@Test (priority = 16 ,groups = "Business at the area - business card" , description= "Test that the color of the ticket number is white")
+
+	@Test(priority = 16, groups = "Business at the area - business card",
+			description = "Test that the color of the ticket number is white")
 	public void testColorOfTicketNumber() {
-		MapsPage.testColorOfTicketNumber();
+		mapsPage.testColorOfTicketNumber();
 	}
-	
-	@Test (priority = 17 ,groups = "Business at the area - business card" , description= "Test that the background color of number at the ticket is not the same as other backgound")
+
+	@Test(priority = 17, groups = "Business at the area - business card",
+			description = "Test that the background color of number at the ticket is not the same as other backgound")
 	public void testColorOfNumberAtTicketThatNotTheSameAsBackground() {
-		MapsPage.testColorOfNumberAtTicketThatNotTheSameAsBackground();
+		mapsPage.testColorOfNumberAtTicketThatNotTheSameAsBackground();
 	}
-	
-	@Test (priority = 18 ,groups = "Business at the area - business card" , description= "Test that choosing number on card lead to business page")
+
+	@Test(priority = 18, groups = "Business at the area - business card",
+			description = "Test that choosing number on card lead to business page")
 	public void testClickOnNumberLeadToBusinessPage() {
-		MapsPage.testClickOnNumberLeadToBusinessPage();
+		mapsPage.testClickOnNumberLeadToBusinessPage();
 	}
-	
-	@Test (priority = 19 ,groups = "Business at the area - business card" , description= "Test that each card has title")
+
+	@Test(priority = 19, groups = "Business at the area - business card",
+			description = "Test that each card has title")
 	public void testThatEachCardHasTitle() {
-		MapsPage.testThatEachCardHasTitle();
+		mapsPage.testThatEachCardHasTitle();
 	}
-	
-	@Test (priority = 20 ,groups = "Business at the area - business card" , description= "Test that each card text is white colored")
+
+	@Test(priority = 20, groups = "Business at the area - business card",
+			description = "Test that each card text is white colored")
 	public void testThatEachCardTitleIsWhite() {
-		MapsPage.testThatEachCardTitleIsWhite();
+		mapsPage.testThatEachCardTitleIsWhite();
 	}
-	
+
 }

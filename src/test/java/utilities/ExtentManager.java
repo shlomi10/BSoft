@@ -14,41 +14,39 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
-public class ExtentManager  {
-	public  ExtentReports extent;
-	public  ExtentTest test;
-	public  ExtentHtmlReporter htmlReporter;
-	public  String reportDate;
-	public  String filePath;
+@SuppressWarnings("javadoc")
+public class ExtentManager {
+	public ExtentReports extent;
+	public ExtentTest test;
+	public ExtentHtmlReporter htmlReporter;
+	public String reportDate;
+	public String filePath;
 
-	public  void init() {
-		reportDate = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss").format(new Date());	
-		filePath = ".\\reports\\Bezeq Maps Report "+ reportDate;
+	public void init() {
+		reportDate = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss").format(new Date());
+		filePath = ".\\reports\\Bezeq Maps Report " + reportDate;
 		new File(filePath).mkdirs();
-		
-		htmlReporter = new ExtentHtmlReporter(filePath+"/report.html");
-		extent = new ExtentReports();               	 
-		extent.attachReporter(htmlReporter);            
+
+		htmlReporter = new ExtentHtmlReporter(filePath + "/report.html");
+		extent = new ExtentReports();
+		extent.attachReporter(htmlReporter);
 
 		htmlReporter.config().setDocumentTitle("Automation report on Bezeq Maps");
-		htmlReporter.config().setReportName("Bezeq Maps Test");               
-		htmlReporter.config().setEncoding("windows-1255"); 
-
+		htmlReporter.config().setReportName("Bezeq Maps Test");
+		htmlReporter.config().setEncoding("windows-1255");
 	}
 
-	public void create_test(String testName)
-	{
-		test = extent.createTest (testName);
+	public void create_test(String testName) {
+		test = extent.createTest(testName);
 	}
 
-	public String CaptureScreen() throws AWTException, IOException
-	{
+	public String CaptureScreen() throws AWTException, IOException {
 		String picDate = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss").format(new Date());
-		String imagePath = filePath+"/pic"+picDate+".jpg";
+		String imagePath = filePath + "/pic" + picDate + ".jpg";
 		Robot robot = new Robot();
-		BufferedImage screenShot = robot.createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
+		BufferedImage screenShot = robot
+				.createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
 		ImageIO.write(screenShot, "jpg", new File(imagePath));
 		return imagePath;
 	}
-
 }

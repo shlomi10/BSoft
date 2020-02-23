@@ -5,19 +5,19 @@
     <classes>
       <class name="tests.MainRunner">
         <methods>
-          <include name="upFooterXButton"/>
-          <include name="upFooteropenWebSite"/>
-          <include name="compareTextColorAtDropDownMenu"/>
-          <include name="compareTextAtDropDownMenu"/>
+          <include name="testColorOfNumberAtTicketThatNotTheSameAsBackground"/>
+          <include name="countCardsAtMapPage"/>
+          <include name="testColorOfTicketNumber"/>
           <include name="testBusinssTabIcon"/>
           <include name="testBusinssTabTextColor"/>
-          <include name="upFooterHamburgerButton"/>
+          <include name="testMapsHeaderTextTopRight"/>
           <include name="close"/>
           <include name="setup"/>
           <include name="testBusinssTabIsDefaultSelected"/>
-          <include name="upFooterClickOnB144Link"/>
           <include name="testLoginPagesforPrivateAndBusiness"/>
-          <include name="testAccessabilityMenu"/>
+          <include name="testThatEachCardHasTitle"/>
+          <include name="testClickOnNumberLeadToBusinessPage"/>
+          <include name="testBusinssTabColorWhenUnselected"/>
         </methods>
       </class> <!-- tests.MainRunner -->
     </classes>

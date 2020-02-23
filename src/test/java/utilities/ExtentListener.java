@@ -6,10 +6,11 @@ import org.testng.ITestResult;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 
+@SuppressWarnings("javadoc")
 public class ExtentListener extends ExtentManager implements ITestListener {
-		
+
 	String str;
-	
+
 	@Override
 	public void onTestStart(ITestResult result) {
 		create_test(result.getName());
@@ -17,23 +18,24 @@ public class ExtentListener extends ExtentManager implements ITestListener {
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
-		System.out.println("The success test name is: "+result.getName());
-		test.log(Status.INFO, "The test name: "+result.getMethod().getDescription());
-		test.log(Status.PASS, result.getMethod().getDescription()+" was succeded");
+		System.out.println("The success test name is: " + result.getName());
+		test.log(Status.INFO, "The test name: " + result.getMethod().getDescription());
+		test.log(Status.PASS, result.getMethod().getDescription() + " succeded");
 	}
 
 	@Override
 	public void onTestFailure(ITestResult result) {
-		System.out.println("The failed test name is: "+result.getName());
+		System.out.println("The failed test name is: " + result.getName());
 		try {
-			test.fail(result.getTestName(), MediaEntityBuilder.createScreenCaptureFromPath(CaptureScreen()).build());
+			test.fail(result.getTestName(),
+					MediaEntityBuilder.createScreenCaptureFromPath(CaptureScreen()).build());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		test.log(Status.INFO, "The test name: "+result.getMethod().getDescription());
+		test.log(Status.INFO, "The test name: " + result.getMethod().getDescription());
 		test.fail(result.getThrowable());
-		test.log(Status.FAIL, result.getMethod().getDescription()+" was was failed");
-		}
+		test.log(Status.FAIL, result.getMethod().getDescription() + " failed");
+	}
 
 	@Override
 	public void onTestSkipped(ITestResult result) {
@@ -55,6 +57,6 @@ public class ExtentListener extends ExtentManager implements ITestListener {
 	public void onFinish(ITestContext context) {
 		extent.flush();
 
-	} 
-	
+	}
+
 }

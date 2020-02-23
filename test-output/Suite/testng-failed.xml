@@ -14,11 +14,29 @@
     <classes>
       <class name="tests.MainRunner">
         <methods>
-          <include name="compareTextColorAtDropDownMenu"/>
+          <include name="testLoginPagesforPrivateAndBusiness"/>
           <include name="close"/>
           <include name="setup"/>
         </methods>
       </class> <!-- tests.MainRunner -->
     </classes>
   </test> <!-- Up Footer(failed) -->
+  <test thread-count="5" name="Business at the area(failed)">
+    <groups>
+      <run>
+        <include name="OpenWebSite-test"/>
+        <include name="Business at the area - business tab"/>
+        <include name="Business at the area - business card"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="tests.MainRunner">
+        <methods>
+          <include name="testClickOnNumberLeadToBusinessPage"/>
+          <include name="close"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- tests.MainRunner -->
+    </classes>
+  </test> <!-- Business at the area(failed) -->
 </suite> <!-- Failed suite [Suite] -->

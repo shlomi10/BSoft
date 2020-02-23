@@ -2,7 +2,6 @@ package pages;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -12,16 +11,16 @@ import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
+@SuppressWarnings({ "javadoc", "static-method" , "hiding"})
 public class BasePage {
 
 	public WebDriver driver;
 	public WebDriverWait wait;
-	public Actions action;    
+	public Actions action;
 
 	public BasePage(WebDriver driver) {
-		this.driver=driver;
-		wait = new WebDriverWait(driver, 10); 
+		this.driver = driver;
+		wait = new WebDriverWait(driver, 10);
 	}
 
 	public void clickOnElement(By elem) {
@@ -61,7 +60,9 @@ public class BasePage {
 	public String getIcon(By elem) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		WebElement icon = wait.until(ExpectedConditions.visibilityOfElementLocated(elem));
-		return (String) js.executeScript("return window.getComputedStyle(arguments[0], ':before').getPropertyValue('content');", icon);
+		return (String) js.executeScript(
+				"return window.getComputedStyle(arguments[0], ':before').getPropertyValue('content');",
+				icon);
 	}
 
 	public WebElement returnWebElement(By elem) {
@@ -77,10 +78,10 @@ public class BasePage {
 	public List<Integer> getNumberTextFromElements(By elem) {
 
 		List<WebElement> elementList = driver.findElements(elem);
-		List<Integer> intList = new ArrayList<Integer>();
+		List<Integer> intList = new ArrayList<>();
 
-		for(WebElement element:elementList) {
-			intList.add(Integer.valueOf(element.getText())); 
+		for (WebElement element : elementList) {
+			intList.add(Integer.valueOf(element.getText()));
 		}
 		return intList;
 	}
@@ -88,20 +89,20 @@ public class BasePage {
 	public List<String> getTextFromElements(By elem) {
 
 		List<WebElement> elementList = driver.findElements(elem);
-		List<String> stringList = new ArrayList<String>();
+		List<String> stringList = new ArrayList<>();
 
-		for(WebElement element:elementList) {
+		for (WebElement element : elementList) {
 			stringList.add(element.getText());
 		}
 		return stringList;
 	}
-	
+
 	public List<String> getColorListFromElements(By elem) {
 
 		List<WebElement> elementList = driver.findElements(elem);
-		List<String> hexColorList = new ArrayList<String>();
+		List<String> hexColorList = new ArrayList<>();
 
-		for(WebElement element:elementList) {
+		for (WebElement element : elementList) {
 			String colorAsHex = Color.fromString(element.getCssValue("color")).asHex();
 			hexColorList.add(colorAsHex);
 		}
