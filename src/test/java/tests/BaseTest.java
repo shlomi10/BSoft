@@ -3,6 +3,7 @@ package tests;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import pages.B144MainPage;
 import pages.MainMapsPage;
 import utilities.ExtentListener;
@@ -17,7 +18,8 @@ public class BaseTest {
 	
 	@BeforeTest(alwaysRun = true)
 	public void setup() {
-		System.setProperty("webdriver.chrome.driver", ".\\drivers\\chromedriver.exe");
+		WebDriverManager.chromedriver().setup();
+		//System.setProperty("webdriver.chrome.driver", ".\\drivers\\chromedriver.exe");
 		driver = new ChromeDriver();
 		// maximize the browser window
 		driver.manage().window().maximize();
