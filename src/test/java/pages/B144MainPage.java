@@ -24,14 +24,14 @@ public class B144MainPage extends BasePage {
 
 	By privateLoginPageTitleElement = By.xpath("//div[@id='loginTitle']");
 	By businessLoginPageTitleElement = By.xpath("//div[@class='dv-connect-header']");
-	String expectedPrivateLoginPageTitle = "ξϊηαψιν μΰζεψ δΰιωι";
+	String expectedPrivateLoginPageTitle = "ΧΧªΧ—Χ‘Χ¨Χ™Χ ΧΧΧ™Χ–Χ•Χ¨ Χ”ΧΧ™Χ©Χ™";
 	String expectedPrivateURL = "https://www.b144.co.il/b144SocialUserLogin.aspx";
-	String expectedBusinessLoginPageTitle = "λπιρϊ ξπειιν";
+	String expectedBusinessLoginPageTitle = "Χ›Χ Χ™Χ΅Χª ΧΧ Χ•Χ™Χ™Χ";
 	String expectedBusinessURL = "https://members.b144.co.il/Infrastructure/B144_Login/Login_New.aspx?p=1205";
 
 	String[] tempList;
-	String firstLineAtDropDown = "λπιρδ μΰζεψ δΰιωι";
-	String secondLineAtDropDown = "λπιρδ μξπειιν ςρχιιν";
+	String firstLineAtDropDown = "Χ›Χ Χ™Χ΅Χ” ΧΧΧ™Χ–Χ•Χ¨ Χ”ΧΧ™Χ©Χ™";
+	String secondLineAtDropDown = "Χ›Χ Χ™Χ΅Χ” ΧΧΧ Χ•Χ™Χ™Χ ΧΆΧ΅Χ§Χ™Χ™Χ";
 	String menuTextFromMenu;
 	String firstLineColorAfterHover, SecondLineColorAfterHover;
 	String expectedBlueColorOfText = "#0279cd";

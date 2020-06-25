@@ -39,7 +39,7 @@ public class MainMapsPage extends BasePage {
 	By mapsHeaderTextTopRight = By.cssSelector(".maps-header-text-h1");
 	By childMapCategoryHeader = By.cssSelector("#currentMapCategory");
 	String childMapCategoryText;
-	String expectedMapsHeaderText = "áòìé î÷öåò áúçåí";
+	String expectedMapsHeaderText = "×‘×¢×œ×™ ××§×¦×•×¢ ×‘×ª×—×•×";
 	String actualMapsHeaderText;
 
 	By cardNumberBusinessAtTheArea = By.cssSelector(".card-number--blue");
