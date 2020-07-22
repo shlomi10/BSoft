@@ -11,7 +11,7 @@ import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-@SuppressWarnings({ "javadoc", "static-method" , "hiding"})
+@SuppressWarnings({ "javadoc"})
 public class BasePage {
 
 	public WebDriver driver;
@@ -23,6 +23,10 @@ public class BasePage {
 		wait = new WebDriverWait(driver, 10);
 	}
 
+	public void navigateToURL(String URL) {
+		driver.navigate().to(URL);
+	}
+	
 	public void clickOnElement(By elem) {
 		driver.findElement(elem).click();
 	}
@@ -49,7 +53,7 @@ public class BasePage {
 		action.moveToElement(element1).build().perform();
 	}
 
-	public String getURL(WebDriver driver) {
+	public String getURLCurrentUrl() {
 		return driver.getCurrentUrl();
 	}
 
@@ -60,13 +64,15 @@ public class BasePage {
 	public String getIcon(By elem) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		WebElement icon = wait.until(ExpectedConditions.visibilityOfElementLocated(elem));
-		return (String) js.executeScript(
-				"return window.getComputedStyle(arguments[0], ':before').getPropertyValue('content');",
-				icon);
+		return (String) js.executeScript("return window.getComputedStyle(arguments[0], ':before').getPropertyValue('content');",icon);
 	}
 
 	public WebElement returnWebElement(By elem) {
 		return driver.findElement(elem);
+	}
+	
+	public boolean getBooleanIfElementIsDisplayed(By elem) {
+		return driver.findElement(elem).isDisplayed();
 	}
 
 	public int countElements(By elem, int numberOfElementsToBE) {
@@ -109,4 +115,15 @@ public class BasePage {
 		return hexColorList;
 	}
 
+	public void scrollToElement(By elemToScroll) {
+		WebElement element1 = driver.findElement(elemToScroll);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element1);
+	}
+	
+	public String getTheLineUnderTab(String selector) {
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		String script = "return window.getComputedStyle(document.querySelector('"+selector+"'),':after').getPropertyValue('content')";
+		String content = (String)js.executeScript(script);
+		return content;
+	}
 }

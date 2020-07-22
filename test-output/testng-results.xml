@@ -1,286 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="2" ignored="19" total="40" passed="19">
+<testng-results ignored="19" total="22" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="41901" started-at="2020-02-23T13:15:27 IST" finished-at="2020-02-23T13:16:09 IST">
+  <suite started-at="2020-07-23T00:36:20 IDT" name="Suite" finished-at="2020-07-23T00:36:46 IDT" duration-ms="25848">
     <groups>
-      <group name="OpenWebSite-test">
-        <method signature="MainRunner.upFooterOpenWebSite()[pri:1, instance:tests.MainRunner@3701eaf6]" name="upFooterOpenWebSite" class="tests.MainRunner"/>
-        <method signature="MainRunner.upFooterOpenWebSite()[pri:1, instance:tests.MainRunner@26aa12dd]" name="upFooterOpenWebSite" class="tests.MainRunner"/>
-      </group> <!-- OpenWebSite-test -->
-      <group name="UpFooter-test">
-        <method signature="MainRunner.compareTextAtDropDownMenu()[pri:5, instance:tests.MainRunner@3701eaf6]" name="compareTextAtDropDownMenu" class="tests.MainRunner"/>
-        <method signature="MainRunner.compareTextColorAtDropDownMenu()[pri:6, instance:tests.MainRunner@3701eaf6]" name="compareTextColorAtDropDownMenu" class="tests.MainRunner"/>
-        <method signature="MainRunner.testAccessabilityMenu()[pri:8, instance:tests.MainRunner@3701eaf6]" name="testAccessabilityMenu" class="tests.MainRunner"/>
-        <method signature="MainRunner.testLoginPagesforPrivateAndBusiness()[pri:7, instance:tests.MainRunner@3701eaf6]" name="testLoginPagesforPrivateAndBusiness" class="tests.MainRunner"/>
-        <method signature="MainRunner.upFooterClickOnB144Link()[pri:4, instance:tests.MainRunner@3701eaf6]" name="upFooterClickOnB144Link" class="tests.MainRunner"/>
-        <method signature="MainRunner.upFooterHamburgerButton()[pri:3, instance:tests.MainRunner@3701eaf6]" name="upFooterHamburgerButton" class="tests.MainRunner"/>
-        <method signature="MainRunner.upFooterXButton()[pri:2, instance:tests.MainRunner@3701eaf6]" name="upFooterXButton" class="tests.MainRunner"/>
-      </group> <!-- UpFooter-test -->
-      <group name="Business at the area - business card">
-        <method signature="MainRunner.countCardsAtMapPage()[pri:14, instance:tests.MainRunner@26aa12dd]" name="countCardsAtMapPage" class="tests.MainRunner"/>
-        <method signature="MainRunner.testClickOnNumberLeadToBusinessPage()[pri:18, instance:tests.MainRunner@26aa12dd]" name="testClickOnNumberLeadToBusinessPage" class="tests.MainRunner"/>
-        <method signature="MainRunner.testColorOfNumberAtTicketThatNotTheSameAsBackground()[pri:17, instance:tests.MainRunner@26aa12dd]" name="testColorOfNumberAtTicketThatNotTheSameAsBackground" class="tests.MainRunner"/>
-        <method signature="MainRunner.testColorOfTicketNumber()[pri:16, instance:tests.MainRunner@26aa12dd]" name="testColorOfTicketNumber" class="tests.MainRunner"/>
-        <method signature="MainRunner.testThatCardsHaveNumbers()[pri:15, instance:tests.MainRunner@26aa12dd]" name="testThatCardsHaveNumbers" class="tests.MainRunner"/>
-        <method signature="MainRunner.testThatEachCardHasTitle()[pri:19, instance:tests.MainRunner@26aa12dd]" name="testThatEachCardHasTitle" class="tests.MainRunner"/>
-        <method signature="MainRunner.testThatEachCardTitleIsWhite()[pri:20, instance:tests.MainRunner@26aa12dd]" name="testThatEachCardTitleIsWhite" class="tests.MainRunner"/>
-      </group> <!-- Business at the area - business card -->
-      <group name="Business at the area - business tab">
-        <method signature="MainRunner.testBusinssTabColorWhenUnselected()[pri:12, instance:tests.MainRunner@26aa12dd]" name="testBusinssTabColorWhenUnselected" class="tests.MainRunner"/>
-        <method signature="MainRunner.testBusinssTabIcon()[pri:10, instance:tests.MainRunner@26aa12dd]" name="testBusinssTabIcon" class="tests.MainRunner"/>
-        <method signature="MainRunner.testBusinssTabIsDefaultSelected()[pri:9, instance:tests.MainRunner@26aa12dd]" name="testBusinssTabIsDefaultSelected" class="tests.MainRunner"/>
-        <method signature="MainRunner.testBusinssTabTextColor()[pri:11, instance:tests.MainRunner@26aa12dd]" name="testBusinssTabTextColor" class="tests.MainRunner"/>
-        <method signature="MainRunner.testMapsHeaderTextTopRight()[pri:13, instance:tests.MainRunner@26aa12dd]" name="testMapsHeaderTextTopRight" class="tests.MainRunner"/>
-      </group> <!-- Business at the area - business tab -->
+      <group name="zip">
+        <method signature="MainRunner.testHamburgerMenuAtZipPage()[pri:22, instance:tests.MainRunner@2bbf180e]" name="testHamburgerMenuAtZipPage" class="tests.MainRunner"/>
+        <method signature="MainRunner.testSearchAtZipPage()[pri:23, instance:tests.MainRunner@2bbf180e]" name="testSearchAtZipPage" class="tests.MainRunner"/>
+      </group> <!-- zip -->
+      <group name="Open Web Site test">
+        <method signature="MainRunner.upFooterOpenWebSite()[pri:1, instance:tests.MainRunner@2bbf180e]" name="upFooterOpenWebSite" class="tests.MainRunner"/>
+      </group> <!-- Open Web Site test -->
+      <group name="zip page up footer and registration">
+        <method signature="MainRunner.testHamburgerMenuAtZipPage()[pri:22, instance:tests.MainRunner@2bbf180e]" name="testHamburgerMenuAtZipPage" class="tests.MainRunner"/>
+      </group> <!-- zip page up footer and registration -->
+      <group name="zip page search">
+        <method signature="MainRunner.testSearchAtZipPage()[pri:23, instance:tests.MainRunner@2bbf180e]" name="testSearchAtZipPage" class="tests.MainRunner"/>
+      </group> <!-- zip page search -->
     </groups>
-    <test name="Up Footer" duration-ms="23356" started-at="2020-02-23T13:15:27 IST" finished-at="2020-02-23T13:15:50 IST">
+    <test started-at="2020-07-23T00:36:20 IDT" name="Zip up footer" finished-at="2020-07-23T00:36:46 IDT" duration-ms="25848">
       <class name="tests.MainRunner">
-        <test-method status="PASS" signature="setup()[pri:0, instance:tests.MainRunner@3701eaf6]" name="setup" is-config="true" duration-ms="9722" started-at="2020-02-23T13:15:27 IST" finished-at="2020-02-23T13:15:37 IST">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.MainRunner@2bbf180e]" started-at="2020-07-23T00:36:20 IDT" name="setup" finished-at="2020-07-23T00:36:26 IDT" duration-ms="6026" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="upFooterOpenWebSite()[pri:1, instance:tests.MainRunner@3701eaf6]" name="upFooterOpenWebSite" duration-ms="2809" started-at="2020-02-23T13:15:37 IST" description="Open the web site test" finished-at="2020-02-23T13:15:40 IST">
+        <test-method signature="upFooterOpenWebSite()[pri:1, instance:tests.MainRunner@2bbf180e]" started-at="2020-07-23T00:36:26 IDT" name="upFooterOpenWebSite" description="Open the web site test" finished-at="2020-07-23T00:36:30 IDT" duration-ms="3923" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- upFooterOpenWebSite -->
-        <test-method status="PASS" signature="upFooterXButton()[pri:2, instance:tests.MainRunner@3701eaf6]" name="upFooterXButton" duration-ms="121" started-at="2020-02-23T13:15:40 IST" description="Test if Hamburger menu have the X option" finished-at="2020-02-23T13:15:40 IST">
+        <test-method signature="testHamburgerMenuAtZipPage()[pri:22, instance:tests.MainRunner@2bbf180e]" started-at="2020-07-23T00:36:30 IDT" name="testHamburgerMenuAtZipPage" description="test the hamburger menu and the registration proccess" finished-at="2020-07-23T00:36:45 IDT" duration-ms="14764" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- upFooterXButton -->
-        <test-method status="PASS" signature="upFooterHamburgerButton()[pri:3, instance:tests.MainRunner@3701eaf6]" name="upFooterHamburgerButton" duration-ms="102" started-at="2020-02-23T13:15:40 IST" description="Test that the Hamburger menu can be closed" finished-at="2020-02-23T13:15:40 IST">
+        </test-method> <!-- testHamburgerMenuAtZipPage -->
+        <test-method signature="testSearchAtZipPage()[pri:23, instance:tests.MainRunner@2bbf180e]" started-at="2020-07-23T00:36:45 IDT" name="testSearchAtZipPage" description="test the search proccess" finished-at="2020-07-23T00:36:45 IDT" duration-ms="375" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- upFooterHamburgerButton -->
-        <test-method status="PASS" signature="upFooterClickOnB144Link()[pri:4, instance:tests.MainRunner@3701eaf6]" name="upFooterClickOnB144Link" duration-ms="694" started-at="2020-02-23T13:15:40 IST" description="Test that the user land at the main 144 page" finished-at="2020-02-23T13:15:40 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- upFooterClickOnB144Link -->
-        <test-method status="PASS" signature="compareTextAtDropDownMenu()[pri:5, instance:tests.MainRunner@3701eaf6]" name="compareTextAtDropDownMenu" duration-ms="3903" started-at="2020-02-23T13:15:41 IST" description="Test that the text at Drop down menu is correct" finished-at="2020-02-23T13:15:44 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- compareTextAtDropDownMenu -->
-        <test-method status="PASS" signature="compareTextColorAtDropDownMenu()[pri:6, instance:tests.MainRunner@3701eaf6]" name="compareTextColorAtDropDownMenu" duration-ms="280" started-at="2020-02-23T13:15:44 IST" description="Test that the text color at Drop down menu is correct" finished-at="2020-02-23T13:15:45 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- compareTextColorAtDropDownMenu -->
-        <test-method status="FAIL" signature="testLoginPagesforPrivateAndBusiness()[pri:7, instance:tests.MainRunner@3701eaf6]" name="testLoginPagesforPrivateAndBusiness" duration-ms="1513" started-at="2020-02-23T13:15:45 IST" description="Test login proccess of private and business user" finished-at="2020-02-23T13:15:46 IST">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='dv-connect-header']"}
-  (Session info: chrome=80.0.3987.116)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'SHLOMI-DESKTOP', ip: '192.168.243.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.116, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\Shlomi\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:59539}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: a8cefcf4f12c8ab5bfdcf6dadf32bbec
-*** Element info: {Using=xpath, value=//div[@class='dv-connect-header']}]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='dv-connect-header']"}
-  (Session info: chrome=80.0.3987.116)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'SHLOMI-DESKTOP', ip: '192.168.243.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.116, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\Shlomi\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:59539}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: a8cefcf4f12c8ab5bfdcf6dadf32bbec
-*** Element info: {Using=xpath, value=//div[@class='dv-connect-header']}
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at pages.BasePage.getTextFromElement(BasePage.java:39)
-at pages.B144MainPage.testLoginPages(B144MainPage.java:86)
-at tests.MainRunner.testLoginPagesforPrivateAndBusiness(MainRunner.java:48)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.util.ArrayList.forEach(ArrayList.java:1257)
-at org.testng.TestRunner.privateRun(TestRunner.java:770)
-at org.testng.TestRunner.run(TestRunner.java:591)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
-at org.testng.SuiteRunner.run(SuiteRunner.java:304)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
-at org.testng.TestNG.runSuites(TestNG.java:1032)
-at org.testng.TestNG.run(TestNG.java:1000)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testLoginPagesforPrivateAndBusiness -->
-        <test-method status="PASS" signature="testAccessabilityMenu()[pri:8, instance:tests.MainRunner@3701eaf6]" name="testAccessabilityMenu" duration-ms="3126" started-at="2020-02-23T13:15:47 IST" description="Test the accessability menu" finished-at="2020-02-23T13:15:50 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testAccessabilityMenu -->
-        <test-method status="PASS" signature="close()[pri:0, instance:tests.MainRunner@3701eaf6]" name="close" is-config="true" duration-ms="622" started-at="2020-02-23T13:15:50 IST" finished-at="2020-02-23T13:15:50 IST">
+        </test-method> <!-- testSearchAtZipPage -->
+        <test-method is-config="true" signature="close()[pri:0, instance:tests.MainRunner@2bbf180e]" started-at="2020-07-23T00:36:45 IDT" name="close" finished-at="2020-07-23T00:36:46 IDT" duration-ms="620" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- close -->
       </class> <!-- tests.MainRunner -->
-    </test> <!-- Up Footer -->
-    <test name="Business at the area" duration-ms="18333" started-at="2020-02-23T13:15:50 IST" finished-at="2020-02-23T13:16:09 IST">
-      <class name="tests.MainRunner">
-        <test-method status="PASS" signature="setup()[pri:0, instance:tests.MainRunner@26aa12dd]" name="setup" is-config="true" duration-ms="9280" started-at="2020-02-23T13:15:50 IST" finished-at="2020-02-23T13:16:00 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="upFooterOpenWebSite()[pri:1, instance:tests.MainRunner@26aa12dd]" name="upFooterOpenWebSite" duration-ms="3263" started-at="2020-02-23T13:16:00 IST" description="Open the web site test" finished-at="2020-02-23T13:16:03 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- upFooterOpenWebSite -->
-        <test-method status="PASS" signature="testBusinssTabIsDefaultSelected()[pri:9, instance:tests.MainRunner@26aa12dd]" name="testBusinssTabIsDefaultSelected" duration-ms="55" started-at="2020-02-23T13:16:03 IST" description="Test that business tab is default choosen" finished-at="2020-02-23T13:16:03 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testBusinssTabIsDefaultSelected -->
-        <test-method status="PASS" signature="testBusinssTabIcon()[pri:10, instance:tests.MainRunner@26aa12dd]" name="testBusinssTabIcon" duration-ms="36" started-at="2020-02-23T13:16:03 IST" description="Test that each card have an eye icon on it" finished-at="2020-02-23T13:16:03 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testBusinssTabIcon -->
-        <test-method status="PASS" signature="testBusinssTabTextColor()[pri:11, instance:tests.MainRunner@26aa12dd]" name="testBusinssTabTextColor" duration-ms="45" started-at="2020-02-23T13:16:03 IST" description="Test that the text at the card is white" finished-at="2020-02-23T13:16:03 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testBusinssTabTextColor -->
-        <test-method status="PASS" signature="testBusinssTabColorWhenUnselected()[pri:12, instance:tests.MainRunner@26aa12dd]" name="testBusinssTabColorWhenUnselected" duration-ms="92" started-at="2020-02-23T13:16:03 IST" description="Test that unselected tab is white colored" finished-at="2020-02-23T13:16:03 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testBusinssTabColorWhenUnselected -->
-        <test-method status="PASS" signature="testMapsHeaderTextTopRight()[pri:13, instance:tests.MainRunner@26aa12dd]" name="testMapsHeaderTextTopRight" duration-ms="41" started-at="2020-02-23T13:16:03 IST" description="Test that the header at the page is the same as the card" finished-at="2020-02-23T13:16:03 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testMapsHeaderTextTopRight -->
-        <test-method status="PASS" signature="countCardsAtMapPage()[pri:14, instance:tests.MainRunner@26aa12dd]" name="countCardsAtMapPage" duration-ms="78" started-at="2020-02-23T13:16:03 IST" description="Test the number of cards at the page" finished-at="2020-02-23T13:16:03 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- countCardsAtMapPage -->
-        <test-method status="PASS" signature="testThatCardsHaveNumbers()[pri:15, instance:tests.MainRunner@26aa12dd]" name="testThatCardsHaveNumbers" duration-ms="211" started-at="2020-02-23T13:16:03 IST" description="Test that cards have number" finished-at="2020-02-23T13:16:04 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testThatCardsHaveNumbers -->
-        <test-method status="PASS" signature="testColorOfTicketNumber()[pri:16, instance:tests.MainRunner@26aa12dd]" name="testColorOfTicketNumber" duration-ms="17" started-at="2020-02-23T13:16:04 IST" description="Test that the color of the ticket number is white" finished-at="2020-02-23T13:16:04 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testColorOfTicketNumber -->
-        <test-method status="PASS" signature="testColorOfNumberAtTicketThatNotTheSameAsBackground()[pri:17, instance:tests.MainRunner@26aa12dd]" name="testColorOfNumberAtTicketThatNotTheSameAsBackground" duration-ms="15" started-at="2020-02-23T13:16:04 IST" description="Test that the background color of number at the ticket is not the same as other backgound" finished-at="2020-02-23T13:16:04 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testColorOfNumberAtTicketThatNotTheSameAsBackground -->
-        <test-method status="FAIL" signature="testClickOnNumberLeadToBusinessPage()[pri:18, instance:tests.MainRunner@26aa12dd]" name="testClickOnNumberLeadToBusinessPage" duration-ms="2931" started-at="2020-02-23T13:16:04 IST" description="Test that choosing number on card lead to business page" finished-at="2020-02-23T13:16:07 IST">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"css selector","selector":".title-row"}
-  (Session info: chrome=80.0.3987.116)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'SHLOMI-DESKTOP', ip: '192.168.243.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.116, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\Shlomi\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:59664}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: d97ab7929d8101555e6f287943ecb431
-*** Element info: {Using=css selector, value=.title-row}]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":".title-row"}
-  (Session info: chrome=80.0.3987.116)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'SHLOMI-DESKTOP', ip: '192.168.243.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.116, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\Shlomi\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:59664}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: d97ab7929d8101555e6f287943ecb431
-*** Element info: {Using=css selector, value=.title-row}
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:420)
-at org.openqa.selenium.By$ByCssSelector.findElement(By.java:431)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at pages.BasePage.getTextFromElement(BasePage.java:39)
-at pages.MainMapsPage.testClickOnNumberLeadToBusinessPage(MainMapsPage.java:165)
-at tests.MainRunner.testClickOnNumberLeadToBusinessPage(MainRunner.java:113)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.util.ArrayList.forEach(ArrayList.java:1257)
-at org.testng.TestRunner.privateRun(TestRunner.java:770)
-at org.testng.TestRunner.run(TestRunner.java:591)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
-at org.testng.SuiteRunner.run(SuiteRunner.java:304)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
-at org.testng.TestNG.runSuites(TestNG.java:1032)
-at org.testng.TestNG.run(TestNG.java:1000)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testClickOnNumberLeadToBusinessPage -->
-        <test-method status="PASS" signature="testThatEachCardHasTitle()[pri:19, instance:tests.MainRunner@26aa12dd]" name="testThatEachCardHasTitle" duration-ms="1471" started-at="2020-02-23T13:16:07 IST" description="Test that each card has title" finished-at="2020-02-23T13:16:08 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testThatEachCardHasTitle -->
-        <test-method status="PASS" signature="testThatEachCardTitleIsWhite()[pri:20, instance:tests.MainRunner@26aa12dd]" name="testThatEachCardTitleIsWhite" duration-ms="97" started-at="2020-02-23T13:16:08 IST" description="Test that each card text is white colored" finished-at="2020-02-23T13:16:08 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testThatEachCardTitleIsWhite -->
-        <test-method status="PASS" signature="close()[pri:0, instance:tests.MainRunner@26aa12dd]" name="close" is-config="true" duration-ms="600" started-at="2020-02-23T13:16:08 IST" finished-at="2020-02-23T13:16:09 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- close -->
-      </class> <!-- tests.MainRunner -->
-    </test> <!-- Business at the area -->
+    </test> <!-- Zip up footer -->
   </suite> <!-- Suite -->
 </testng-results>

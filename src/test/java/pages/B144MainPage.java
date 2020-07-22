@@ -37,7 +37,7 @@ public class B144MainPage extends BasePage {
 	String expectedBlueColorOfText = "#0279cd";
 	String hexLineOne, hexLineTwo;
 
-	By accessabilityMenu = By.xpath("//img[@id='access']");
+	By accessabilityMenu = By.id("access");
 	By accessabilityMenuState = By.xpath("//div[@id='INDmenu']");
 	By closeButtonAccessabilityButton = By.xpath("//div[@class='INDmenuHeader']/button[1]");
 	By accessabilityMenuCloseState = By.xpath("//div[@id='INDmenu' and @aria-hidden='true']");
@@ -79,13 +79,13 @@ public class B144MainPage extends BasePage {
 		clickOnElement(firstLineElement);
 		Assert.assertEquals(getTextFromElement(privateLoginPageTitleElement),
 				expectedPrivateLoginPageTitle, "The title at private customer page is not right");
-		Assert.assertEquals(getURL(driver), expectedPrivateURL,
+		Assert.assertEquals(getURLCurrentUrl(), expectedPrivateURL,
 				"The URL at private customer page is not right");
 		clickOnElement(enterToAccountButton);
 		clickOnElement(secondLineElement);
 		Assert.assertEquals(getTextFromElement(businessLoginPageTitleElement),
 				expectedBusinessLoginPageTitle, "The title at business customer page is not right");
-		Assert.assertEquals(getURL(driver), expectedBusinessURL,
+		Assert.assertEquals(getURLCurrentUrl(), expectedBusinessURL,
 				"The URL at business customer page is not right");
 	}
 

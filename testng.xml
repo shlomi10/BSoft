@@ -5,7 +5,7 @@
 	<listeners>
 		<listener class-name="utilities.ExtentListener" />
 	</listeners>
-
+<!-- 
       	<test name="Up Footer">
 		<groups>
 			<run>
@@ -24,6 +24,20 @@
 				<include name="OpenWebSite-test" />
 				<include name="Business at the area - business tab" />
 				<include name="Business at the area - business card" />
+			</run>
+		</groups>
+		<classes>
+			<class name="tests.MainRunner"></class>
+		</classes>
+	</test>  
+	 -->
+	 	<test name="Zip up footer">
+		<groups>
+			<run>
+				<include name="Open Web Site test" />
+ 				<include name="zip page up footer and registration" />
+				<include name="zip page search" />
+				
 			</run>
 		</groups>
 		<classes>

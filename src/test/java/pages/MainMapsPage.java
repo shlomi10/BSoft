@@ -18,7 +18,7 @@ public class MainMapsPage extends BasePage {
 	By hamburgerMenu = By.xpath("//div[@class='hamburger-box']");
 	By xHamburgerMenuClose = By.xpath("//div[@class='hamburger hamburger--3dx']");
 	By xHamburgerMenuOpen = By.xpath("//div[@class='hamburger hamburger--3dx is-active']");
-	By b144LogoButton = By.xpath("//img[@id='logoB144']");
+	By b144LogoButton = By.id("logoB144");
 	String currentURL;
 
 	String expectedIcon = "url(\"https://maps.b144.co.il/images/icons/f80af126.white_eye_icon.png\")";
@@ -61,7 +61,7 @@ public class MainMapsPage extends BasePage {
 	String whiteExpectedTitleColor = "#ffffff";
 
 	public void getWebSite(String siteURL) {
-		driver.get(siteURL);
+		navigateToURL(siteURL);
 	}
 
 	public void changeHamburgerMenuUponOpeningToX() {

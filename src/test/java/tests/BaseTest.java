@@ -6,6 +6,7 @@ import org.testng.annotations.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import pages.B144MainPage;
 import pages.MainMapsPage;
+import pages.ZipMainPage;
 import utilities.ExtentListener;
 
 @SuppressWarnings("javadoc")
@@ -15,6 +16,7 @@ public class BaseTest {
 	MainMapsPage mapsPage;
 	B144MainPage mainPage;
 	ExtentListener extentListener;
+	ZipMainPage zipMainPage;
 	
 	@BeforeTest(alwaysRun = true)
 	public void setup() {
@@ -26,6 +28,7 @@ public class BaseTest {
 
 		mapsPage = new MainMapsPage(driver);
 		mainPage = new B144MainPage(driver);
+		zipMainPage = new ZipMainPage(driver);
 	}
 
 	@AfterTest(alwaysRun = true)
