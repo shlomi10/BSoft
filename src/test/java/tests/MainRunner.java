@@ -8,12 +8,12 @@ public class MainRunner extends BaseTest {
 	String mapsSiteURL = "https://maps.b144.co.il/";
 	String zipSiteURL = "https://www.b144.co.il/zipcode.aspx";
 
-	@Test(priority = 1, groups = {"Open Web Site test"}, description = "Open the web site test")
+	@Test(priority = 1, groups = { "Open Web Site test" }, description = "Open the web site test")
 	public void upFooterOpenWebSite() {
 		mapsPage.getWebSite(zipSiteURL);
 	}
 
-	@Test(priority = 2, groups = {"Up Footer test"},
+	@Test(priority = 2, groups = { "Up Footer test" },
 			description = "Test if Hamburger menu have the X option")
 	public void upFooterXButton() {
 		mapsPage.changeHamburgerMenuUponOpeningToX();
@@ -125,8 +125,9 @@ public class MainRunner extends BaseTest {
 	public void testThatEachCardTitleIsWhite() {
 		mapsPage.testThatEachCardTitleIsWhite();
 	}
-	
-	@Test(priority = 22, groups = {"zip page up footer and registration", "zip"}, description = "test the hamburger menu and the registration proccess")
+
+	@Test(priority = 22, groups = { "zip page up footer and registration", "zip" },
+			description = "test the hamburger menu and the registration proccess")
 	public void testHamburgerMenuAtZipPage() {
 		zipMainPage.getWebSite(zipSiteURL);
 		zipMainPage.changeHamburgerMenuUponOpeningToX();
@@ -135,13 +136,18 @@ public class MainRunner extends BaseTest {
 		zipMainPage.accessabilityMenu();
 		zipMainPage.registerAsBusiness();
 	}
-	
-	@Test(priority = 23, groups = {"zip page search", "zip"}, description = "test the search proccess")
+
+	@Test(priority = 23, groups = { "zip page search", "zip" },
+			description = "test the search proccess")
 	public void testSearchAtZipPage() {
 		zipMainPage.serachFieldLine();
 	}
-	
 
-		
+	@Test(priority = 24, groups = { "search for a business", "zip" },
+			description = "test the search of business")
+	public void testSearchOfBusiness() {
+		zipMainPage.performSearchAndGetSuggestedOffers();
+		zipMainPage.selectCityToSearchFor();
+	}
 
 }

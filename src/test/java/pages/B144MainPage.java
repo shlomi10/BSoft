@@ -7,10 +7,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.Color;
 import org.testng.Assert;
-
+/**
+ * @author Shlomi
+ * @category B144 main page
+ * @apiNote These functions are to test the B144 main page
+ */
 @SuppressWarnings({ "javadoc" })
 public class B144MainPage extends BasePage {
 
+	// constructor
 	public B144MainPage(WebDriver driver) {
 		super(driver);
 	}
@@ -43,12 +48,12 @@ public class B144MainPage extends BasePage {
 	By accessabilityMenuCloseState = By.xpath("//div[@id='INDmenu' and @aria-hidden='true']");
 	String state, state1;
 
+	// test the drop down menu
 	public void compareOptionsOnDropDownMenu() {
 		expectedListTextDropDown.add(firstLineAtDropDown);
 		expectedListTextDropDown.add(secondLineAtDropDown);
 		waitForElementToBeVisable(enterToAccountButton);
 		clickOnElement(enterToAccountButton);
-
 		tempList = getTextFromElement(menuText).split("[\\r\\n]+");
 		for (String temp : tempList) {
 			actualListTextDropDown.add(temp);
@@ -57,6 +62,7 @@ public class B144MainPage extends BasePage {
 				"The text isn't as expected at the Drop down menu");
 	}
 
+	// test the color of buttons
 	public void testColorOfButtons() {
 		mouseHooverFromElement(firstLineElement);
 		firstLineColorAfterHover = getColorFromElement(firstLineElement);
@@ -74,6 +80,7 @@ public class B144MainPage extends BasePage {
 				+ " in Hexa: " + hexLineTwo);
 	}
 
+	// test the login process
 	public void testLoginPages() {
 		waitForElementToBeClickable(firstLineElement);
 		clickOnElement(firstLineElement);
@@ -89,6 +96,7 @@ public class B144MainPage extends BasePage {
 				"The URL at business customer page is not right");
 	}
 
+	// test the accessability menu
 	public void testAccessabilityMenu() {
 		waitForElementToBeClickable(accessabilityMenu);
 		clickOnElement(accessabilityMenu);

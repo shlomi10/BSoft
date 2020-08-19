@@ -2,14 +2,21 @@ package pages;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 
 
-@SuppressWarnings({ "javadoc" })
+/**
+ * @author Shlomi
+ * @category Zip page
+ * @apiNote These functions are to test the zip page
+ */
+@SuppressWarnings("javadoc")
 public class ZipMainPage extends BasePage {
 
+	
 	public ZipMainPage(WebDriver driver) {
 		super(driver);
 	}
@@ -28,14 +35,14 @@ public class ZipMainPage extends BasePage {
 	String state, state1;
 	
 	By joinBusinessBotton = By.id("joinBusiness");
-	By businessRegistrationTitleElem = By.cssSelector("h1.page-title");
+	By businessRegistrationTitleElem = By.cssSelector("h1.page-title"); 
 	String expectedTextAtRegistrationPage = "רישום עצמי למדריך העסקים B144";
 	
 	By footerLinks = By.cssSelector(".footer-links-list");
 	int expectedXLocationOfRegisterAsBusiness = 0;
 	int expectedYLocationOfRegisterAsBusiness = 93;
 	
-	By searchBusinessElem = By.cssSelector(".bezekDrop.business");
+	By BusinessTabElem = By.xpath("//*[contains(@class,'bezekDrop business')]");
 	String searchBusinessElemTab = ".bezekDrop.business";
 	By businessSuitCaseIconElem = By.cssSelector(".inputRow.visible [id='suitcaseImg']");
 	By searchPeopleElem = By.id("people");
@@ -45,23 +52,42 @@ public class ZipMainPage extends BasePage {
 	String searchZipElemTab = "#zipcode";
 	By zipIconElem = By.cssSelector(".inputRow.visible .place-icon");
 	String expectedLineUnderTab = "\"\"";
-
+	
+	By searchFieldBusiness = By.id("txtCat");
+	String FirstThreeLettersToSearch = "הוב";
+	By suggestedOffers = By.cssSelector(".auto-complete-item");
+	String numberOfExpectedSuggestions = "5";
+	int actualnumberOfSuggestions;
+	String cityToSearchOn = "תל אביב יפו";
+	By citySearchField = By.id("txtCity");
+	By searchButtonElement = By.cssSelector("div[id='b_BusinessSearch']");
+	By titleResultPage = By.id("titleHdr");
+	String expectedLandingUrlAfterSearch = "";
+	String expectedReultInTitle = FirstThreeLettersToSearch +" "+ cityToSearchOn;
+	String textThatWasSearched;
+	String cityThatWasSearched;
+	
+	
+	// navigate to the zip page
 	public void getWebSite(String siteURL) {
 		navigateToURL(siteURL);
 	}
 	
+	// open the hamburger menu and validate that X to close is there
 	public void changeHamburgerMenuUponOpeningToX() {
 		waitForElementToBeClickable(hamburgerMenu);
 		clickOnElement(hamburgerMenu);
-		isDisp = getBooleanIfElementIsDisplayed(xHamburgerMenuOpen);
-		Assert.assertTrue(isDisp, "X button is not dispayed");
+		isDisp = IsElementDisplayed(xHamburgerMenuOpen);
+		assertTrue(isDisp, "X button is not dispayed");
 	}
 	
+	// validate the landing page when select B144 Link
 	public void clickOnB144Link() {
 		clickOnElement(b144LogoButton);
-		Assert.assertEquals(getURLCurrentUrl(), "https://www.b144.co.il/", "Not the expected URL for zip main page");
+		assertEquals(getURLCurrentUrl(), "https://www.b144.co.il/", "Not the expected URL for zip main page");
 	}
 	
+	// navigate to business area 
 	public void getToBusinessArea(String URL) {
 		navigateToURL(URL);
 		waitForElementToBeClickable(enterToBusinessSubscribers);
@@ -69,6 +95,7 @@ public class ZipMainPage extends BasePage {
 		assertEquals(getURLCurrentUrl(), expectedURLBusinessSite, "Not the expected URL for business site");
 	}
 
+	// validate the presence of accessibility menu
 	public void accessabilityMenu() {
 		waitForElementToBeClickable(accessabilityMenu);
 		clickOnElement(accessabilityMenu);
@@ -81,6 +108,7 @@ public class ZipMainPage extends BasePage {
 		driver.navigate().back();
 	}
 	
+	// test the business registration 
 	public void registerAsBusiness() {
 		waitForElementToBeClickable(joinBusinessBotton);
 		clickOnElement(joinBusinessBotton);
@@ -89,26 +117,59 @@ public class ZipMainPage extends BasePage {
 		waitForElementToBeVisable(footerLinks);
 		scrollToElement(footerLinks);
 		scrollToElement(joinBusinessBotton);
-		System.out.println("location is: "+returnWebElement(joinBusinessBotton).getLocation());
+		//System.out.println("location is: "+returnWebElement(joinBusinessBotton).getLocation());
 		assertEquals(returnWebElement(joinBusinessBotton).getLocation().getX(), expectedXLocationOfRegisterAsBusiness);
 		assertEquals(returnWebElement(joinBusinessBotton).getLocation().getY(), expectedYLocationOfRegisterAsBusiness);
 	}
 	
+	// test the search for business field under zip
 	public void serachFieldLine() {
-		clickOnElement(searchBusinessElem);
+		clickOnElement(BusinessTabElem);
 		assertTrue(returnWebElement(businessSuitCaseIconElem).isDisplayed(), "the suitcase in search field of business is not displayed");
-		System.out.println("business: "+getTheLineUnderTab(searchBusinessElemTab));
+		//System.out.println("business: "+getTheLineUnderTab(searchBusinessElemTab));
 		assertEquals(getTheLineUnderTab(searchBusinessElemTab), expectedLineUnderTab, "no underscore under search business tab");
 		clickOnElement(searchPeopleElem);
 		assertTrue(returnWebElement(peopleIconElem).isDisplayed(), "the suitcase in search field of business is not displayed");
-		System.out.println("people: "+getTheLineUnderTab(searchPeopleElemTab));
+		//System.out.println("people: "+getTheLineUnderTab(searchPeopleElemTab));
 		assertEquals(getTheLineUnderTab(searchPeopleElemTab), expectedLineUnderTab, "no underscore under search people tab");
 
 		clickOnElement(searchZipElem);
 		assertTrue(returnWebElement(zipIconElem).isDisplayed(), "the suitcase in search field of business is not displayed");
-		System.out.println("zip: "+getTheLineUnderTab(searchZipElemTab));
+		//System.out.println("zip: "+getTheLineUnderTab(searchZipElemTab));
 		assertEquals(getTheLineUnderTab(searchZipElemTab), expectedLineUnderTab, "no underscore under search zip tab");
-
 	}
 	
+	// test the business suggestions
+	public void performSearchAndGetSuggestedOffers() {
+		clickOnElement(BusinessTabElem);
+		clearAndTypeTextToElem(searchFieldBusiness, FirstThreeLettersToSearch);
+		mouseHooverFromElementToElementAndClick(searchFieldBusiness);
+		rightArrowKeyType(searchFieldBusiness);
+		waitForElementToBePresence(suggestedOffers);
+		assertEquals(getNumberOfElementsFromDom(), numberOfExpectedSuggestions, "the suggested search option is not as expected");
+		downArrowKeyType(searchFieldBusiness);
+		clickEnterOnElem(searchFieldBusiness);
+		textThatWasSearched = getAttributeFromElement(searchFieldBusiness, "value");
+		System.out.println("text of what searched : "+ textThatWasSearched);
+	}
+	
+	// test the city suggestions and perform search
+	public void selectCityToSearchFor() {
+		clearAndTypeTextToElem(citySearchField, cityToSearchOn);
+		cityThatWasSearched = getAttributeFromElement(citySearchField, "value");
+		System.out.println("city of what searched : " + cityThatWasSearched);
+		downArrowKeyType(citySearchField);
+		clickEnterOnElem(citySearchField);
+		waitForElementToBePresence(titleResultPage);
+		// clickOnElement(searchButtonElement);
+		String result = getTextFromElement(titleResultPage);
+		System.out.println("the search matcher is : " + result);
+		Pattern p = Pattern.compile("^" +textThatWasSearched+ " ב*" +cityThatWasSearched + "$");
+		Matcher m = p.matcher(result);
+		
+		if (m.find()) 
+			System.out.println("the landing page result is: " + m.group(0));
+		
+		assertTrue(m.find(), "you didn't landed at the results page");
+	}
 }

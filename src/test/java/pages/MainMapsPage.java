@@ -180,12 +180,6 @@ public class MainMapsPage extends BasePage {
 			// System.out.println(colorIterator.next());
 			Assert.assertEquals(whiteExpectedTitleColor, colorIterator.next());
 		}
-		/*
-		 * for(String str: getColorListFromElements(cardTitleElement))
-		 * {
-		 * Assert.assertEquals(whiteExpectedTitleColor, str);
-		 * }
-		 */
 	}
 
 }
