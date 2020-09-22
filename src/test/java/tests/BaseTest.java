@@ -2,6 +2,8 @@ package tests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import pages.B144MainPage;
@@ -18,11 +20,24 @@ public class BaseTest {
 	ExtentListener extentListener;
 	ZipMainPage zipMainPage;
 	
+	@Parameters({ "browser" })
 	@BeforeTest(alwaysRun = true)
-	public void setup() {
+	public void setup(String browser) {
 		WebDriverManager.chromedriver().setup();
+		try {
+			WebDriverManager.chromedriver().setup();
+			if (browser.equalsIgnoreCase("Edge")) {
+				driver = new EdgeDriver();
+			} else if (browser.equalsIgnoreCase("chrome")) {
+				driver = new ChromeDriver();
+			} else if (browser.equalsIgnoreCase("IE")) {
+				driver = new InternetExplorerDriver();
+			}
+		}catch (Exception e) {
+			System.out.println("You enter wrong browser");
+		}
+		
 		//System.setProperty("webdriver.chrome.driver", ".\\drivers\\chromedriver.exe");
-		driver = new ChromeDriver();
 		// maximize the browser window
 		driver.manage().window().maximize();
 

@@ -52,7 +52,7 @@ public class B144MainPage extends BasePage {
 	public void compareOptionsOnDropDownMenu() {
 		expectedListTextDropDown.add(firstLineAtDropDown);
 		expectedListTextDropDown.add(secondLineAtDropDown);
-		waitForElementToBeVisable(enterToAccountButton);
+		waitForElementToBeVisible(enterToAccountButton);
 		clickOnElement(enterToAccountButton);
 		tempList = getTextFromElement(menuText).split("[\\r\\n]+");
 		for (String temp : tempList) {
@@ -105,7 +105,7 @@ public class B144MainPage extends BasePage {
 				"The Accessability menu is close instead of open state");
 		waitForElementToBeClickable(closeButtonAccessabilityButton);
 		clickOnElement(closeButtonAccessabilityButton);
-		waitForElementToBeVisable(accessabilityMenuState);
+		waitForElementToBeVisible(accessabilityMenuState);
 		state1 = getAttributeFromElement(accessabilityMenuState, "aria-hidden");
 		Assert.assertEquals(state1, "true",
 				"The Accessability menu is open instead of close state");

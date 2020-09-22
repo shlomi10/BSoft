@@ -78,12 +78,12 @@ public class BasePage {
 	}
 
 	// function to wait for element to be visible
-	public void waitForElementToBeVisable(By elem) {
+	public void waitForElementToBeVisible(By elem) {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(elem));
 	}
 	
 	// function to wait for element to be presented
-	public void waitForElementToBePresence(By elem) {
+	public void waitForElementToBePresented(By elem) {
 		wait.until(ExpectedConditions.presenceOfElementLocated(elem));
 	}
 	

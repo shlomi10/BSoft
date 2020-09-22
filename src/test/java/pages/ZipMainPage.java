@@ -114,7 +114,7 @@ public class ZipMainPage extends BasePage {
 		clickOnElement(joinBusinessBotton);
 		assertEquals(getTextFromElement(businessRegistrationTitleElem), expectedTextAtRegistrationPage);
 		driver.navigate().back();
-		waitForElementToBeVisable(footerLinks);
+		waitForElementToBeVisible(footerLinks);
 		scrollToElement(footerLinks);
 		scrollToElement(joinBusinessBotton);
 		//System.out.println("location is: "+returnWebElement(joinBusinessBotton).getLocation());
@@ -145,7 +145,7 @@ public class ZipMainPage extends BasePage {
 		clearAndTypeTextToElem(searchFieldBusiness, FirstThreeLettersToSearch);
 		mouseHooverFromElementToElementAndClick(searchFieldBusiness);
 		rightArrowKeyType(searchFieldBusiness);
-		waitForElementToBePresence(suggestedOffers);
+		waitForElementToBePresented(suggestedOffers);
 		assertEquals(getNumberOfElementsFromDom(), numberOfExpectedSuggestions, "the suggested search option is not as expected");
 		downArrowKeyType(searchFieldBusiness);
 		clickEnterOnElem(searchFieldBusiness);
@@ -160,7 +160,7 @@ public class ZipMainPage extends BasePage {
 		System.out.println("city of what searched : " + cityThatWasSearched);
 		downArrowKeyType(citySearchField);
 		clickEnterOnElem(citySearchField);
-		waitForElementToBePresence(titleResultPage);
+		waitForElementToBePresented(titleResultPage);
 		// clickOnElement(searchButtonElement);
 		String result = getTextFromElement(titleResultPage);
 		System.out.println("the search matcher is : " + result);

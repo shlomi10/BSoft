@@ -2,6 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="Suite" >
+<parameter name="browser" value="chrome" />
 	<listeners>
 		<listener class-name="utilities.ExtentListener" />
 	</listeners>
@@ -35,9 +36,7 @@
 		<groups>
 			<run>
 				<include name="Open Web Site test" />
- 				<include name="zip page up footer and registration" />
-				<include name="zip page search" />
-				
+ 				<include name="zip" />				
 			</run>
 		</groups>
 		<classes>

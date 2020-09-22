@@ -85,7 +85,7 @@ public class MainMapsPage extends BasePage {
 	}
 
 	public void businessTabIsDefaultChoose() {
-		waitForElementToBeVisable(businessTabID);
+		waitForElementToBeVisible(businessTabID);
 		selectedTabState = getAttributeFromElement(businessTabID, "aria-selected");
 		Assert.assertEquals(selectedTabState, "true",
 				"The Business tab is not selected by default");

@@ -8,13 +8,13 @@
     <groups>
       <run>
         <include name="Open Web Site test"/>
-        <include name="zip page up footer and registration"/>
+        <include name="zip"/>
       </run>
     </groups>
     <classes>
       <class name="tests.MainRunner">
         <methods>
-          <include name="testHamburgerMenuAtZipPage"/>
+          <include name="testSearchOfBusiness"/>
           <include name="close"/>
           <include name="setup"/>
         </methods>
