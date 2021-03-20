@@ -11,18 +11,18 @@ import pages.MainMapsPage;
 import pages.ZipMainPage;
 import utilities.ExtentListener;
 
-@SuppressWarnings("javadoc")
+@SuppressWarnings({"javadoc", "unused"})
 public class BaseTest {
 
 	WebDriver driver;
 	MainMapsPage mapsPage;
 	B144MainPage mainPage;
-	ExtentListener extentListener;
 	ZipMainPage zipMainPage;
 	
 	@Parameters({ "browser" })
 	@BeforeTest(alwaysRun = true)
 	public void setup(String browser) {
+		
 		WebDriverManager.chromedriver().setup();
 		try {
 			WebDriverManager.chromedriver().setup();

@@ -47,7 +47,7 @@ public class B144MainPage extends BasePage {
 	By closeButtonAccessabilityButton = By.xpath("//div[@class='INDmenuHeader']/button[1]");
 	By accessabilityMenuCloseState = By.xpath("//div[@id='INDmenu' and @aria-hidden='true']");
 	String state, state1;
-
+	
 	// test the drop down menu
 	public void compareOptionsOnDropDownMenu() {
 		expectedListTextDropDown.add(firstLineAtDropDown);
@@ -69,8 +69,7 @@ public class B144MainPage extends BasePage {
 		mouseHooverFromElement(secondLineElement);
 		SecondLineColorAfterHover = getColorFromElement(secondLineElement);
 		hexLineOne = Color.fromString(firstLineColorAfterHover).asHex();
-		Assert.assertEquals(hexLineOne, expectedBlueColorOfText,
-				"The first line at the DropDown menu is not Blue");
+		Assert.assertEquals(hexLineOne, expectedBlueColorOfText, "The first line at the DropDown menu is not Blue");
 		hexLineTwo = Color.fromString(SecondLineColorAfterHover).asHex();
 		Assert.assertEquals(hexLineTwo, expectedBlueColorOfText,
 				"The second line at the DropDown menu is not Blue");

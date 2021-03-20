@@ -19,7 +19,7 @@ public class ExtentListener extends ExtentManager implements ITestListener {
 	@Override
 	public void onTestSuccess(ITestResult result) {
 		System.out.println("The success test name is: " + result.getName());
-		test.log(Status.INFO, "The test name: " + result.getMethod().getDescription());
+		test.info("The test name: " + result.getMethod().getDescription());
 		test.log(Status.PASS, result.getMethod().getDescription() + " succeded");
 	}
 
@@ -32,9 +32,9 @@ public class ExtentListener extends ExtentManager implements ITestListener {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		test.log(Status.INFO, "The test name: " + result.getMethod().getDescription());
+		test.info("The test name: " + result.getMethod().getDescription());
 		test.fail(result.getThrowable());
-		test.log(Status.FAIL, result.getMethod().getDescription() + " failed");
+		test.fail(result.getMethod().getDescription() + " failed");
 	}
 
 	@Override
@@ -56,7 +56,6 @@ public class ExtentListener extends ExtentManager implements ITestListener {
 	@Override
 	public void onFinish(ITestContext context) {
 		extent.flush();
-
 	}
 
 }

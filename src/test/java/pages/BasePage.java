@@ -1,7 +1,11 @@
 package pages;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -17,17 +21,23 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  * @category Main methods
  * @apiNote These functions are for all pages
  */
-@SuppressWarnings({ "javadoc"})
-public class BasePage {
 
-	public WebDriver driver;
-	public WebDriverWait wait;
-	public Actions action;
+@SuppressWarnings({ "javadoc"})
+public abstract class BasePage  {
+
+	WebDriver driver;
+	WebDriverWait wait;
+	Actions action;
+	Robot robot;
 	
 	// constructor
 	public BasePage(WebDriver driver) {
 		this.driver = driver;
 		wait = new WebDriverWait(driver, 10);
+	}
+	
+	public void Keyboard() throws AWTException {
+		this.robot = new Robot();
 	}
 
 	// function to navigate to URL
@@ -62,16 +72,31 @@ public class BasePage {
 		driver.findElement(elem).sendKeys(Keys.ENTER);
 	}
 	
+	//****/
+	public void clickOnElem(By elem, Keys key ) {
+		driver.findElement(elem).sendKeys(key);
+	}
+	
 	// function to click on right arrow
 	public void rightArrowKeyType(By elem) {
 		driver.findElement(elem).sendKeys(Keys.ARROW_RIGHT);
 	}
 	
+	// function to click on left arrow
+	public void leftArrowKeyType(By elem) {
+		driver.findElement(elem).sendKeys(Keys.ARROW_LEFT);
+	}
+		
 	// function to click on down arrow
 	public void downArrowKeyType(By elem) {
 		driver.findElement(elem).sendKeys(Keys.ARROW_DOWN);
 	}
 
+	// function to click on spaceBar
+	public void spaceBarKeyType(By elem) {
+		driver.findElement(elem).sendKeys(Keys.SPACE);
+	}
+		
 	// function to wait for element to be clickable
 	public void waitForElementToBeClickable(By elem) {
 		wait.until(ExpectedConditions.elementToBeClickable(elem));
@@ -165,10 +190,12 @@ public class BasePage {
 	public List<String> getColorListFromElements(By elem) {
 		List<WebElement> elementList = driver.findElements(elem);
 		List<String> hexColorList = new ArrayList<>();
-		for (WebElement element : elementList) {
-			String colorAsHex = Color.fromString(element.getCssValue("color")).asHex();
-			hexColorList.add(colorAsHex);
-		}
+		// for java 8+
+		hexColorList = elementList.stream().map(element -> Color.fromString(element.getCssValue("color")).asHex()).collect(Collectors.toList());
+//		for (WebElement element : elementList) {
+//			String colorAsHex = Color.fromString(element.getCssValue("color")).asHex();
+//			hexColorList.add(colorAsHex);
+//		}
 		return hexColorList;
 	}
 
@@ -184,5 +211,12 @@ public class BasePage {
 		String script = "return window.getComputedStyle(document.querySelector('"+selector+"'),':after').getPropertyValue('content')";
 		String content = (String)js.executeScript(script);
 		return content;
+	}
+	
+	// Robot 
+	public void robotRightClick() {
+	    robot.keyPress(KeyEvent.VK_RIGHT);
+	    robot.delay(5000);
+	    robot.keyPress(KeyEvent.VK_RIGHT);
 	}
 }

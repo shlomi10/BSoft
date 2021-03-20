@@ -12,13 +12,13 @@ import java.util.Date;
 import javax.imageio.ImageIO;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 @SuppressWarnings("javadoc")
 public class ExtentManager {
 	public ExtentReports extent;
 	public ExtentTest test;
-	public ExtentHtmlReporter htmlReporter;
+	public ExtentSparkReporter spark;
 	public String reportDate;
 	public String filePath;
 
@@ -27,13 +27,14 @@ public class ExtentManager {
 		filePath = ".\\reports\\Bezeq Maps Report " + reportDate;
 		new File(filePath).mkdirs();
 
-		htmlReporter = new ExtentHtmlReporter(filePath + "/report.html");
+		spark = new ExtentSparkReporter(filePath + "/report.html");
 		extent = new ExtentReports();
-		extent.attachReporter(htmlReporter);
+		extent.attachReporter(spark);
 
-		htmlReporter.config().setDocumentTitle("Automation report on Bezeq Maps");
-		htmlReporter.config().setReportName("Bezeq Maps Test");
-		htmlReporter.config().setEncoding("windows-1255");
+		spark.config().setDocumentTitle("Automation report on Bezeq Maps");
+		spark.config().setReportName("Bezeq Maps Test");
+		spark.config().setEncoding("windows-1255");
+		
 	}
 
 	public void create_test(String testName) {

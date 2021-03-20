@@ -126,15 +126,16 @@ public class MainRunner extends BaseTest {
 		mapsPage.testThatEachCardTitleIsWhite();
 	}
 
-	@Test(priority = 22, groups = { "zip page up footer and registration", "zip" },
-			description = "test the hamburger menu and the registration proccess")
+	@Test(priority = 22, groups = { "zip page up footer and registration", "zip" }, description = "test the hamburger menu and the registration proccess")
 	public void testHamburgerMenuAtZipPage() {
-		zipMainPage.getWebSite(zipSiteURL);
-		zipMainPage.changeHamburgerMenuUponOpeningToX();
-		zipMainPage.clickOnB144Link();
-		zipMainPage.getToBusinessArea(zipSiteURL);
-		zipMainPage.accessabilityMenu();
-		zipMainPage.registerAsBusiness();
+		
+		zipMainPage.getWebSite(zipSiteURL)
+		.changeHamburgerMenuUponOpeningToX()
+		.clickOnB144Link()
+		.getToBusinessArea(zipSiteURL)
+		.accessabilityMenu()
+		.registerAsBusiness();
+		
 	}
 
 	@Test(priority = 23, groups = { "zip page search", "zip" },
